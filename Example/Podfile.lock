@@ -1,0 +1,114 @@
+PODS:
+  - Alamofire (5.6.2)
+  - BaiduBCEPlayerFull (2.3.7)
+  - Cache (6.0.0)
+  - CocoaAsyncSocket (7.6.5)
+  - GTMBase64 (1.0.1)
+  - KeychainAccess (4.2.2)
+  - lottie-ios (3.5.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.5)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - MTPower (0.2.0):
+    - MTPower/Basic (= 0.2.0)
+    - MTPower/Extensions (= 0.2.0)
+    - MTPower/HUD (= 0.2.0)
+    - MTPower/Player (= 0.2.0)
+    - MTPower/Request (= 0.2.0)
+    - MTPower/Utils (= 0.2.0)
+    - MTPower/Widgets (= 0.2.0)
+  - MTPower/Basic (0.2.0):
+    - KeychainAccess (~> 4.2.1)
+  - MTPower/Extensions (0.2.0)
+  - MTPower/HUD (0.2.0):
+    - lottie-ios
+    - MBProgressHUD
+  - MTPower/Player (0.2.0):
+    - BaiduBCEPlayerFull (~> 2.3.7)
+    - MTPower/Basic
+    - MTPower/Extensions
+    - MTPower/HUD
+    - MTPower/Widgets
+    - SJMediaCacheServer
+    - SJUIKit/SQLite3
+    - SnapKit
+  - MTPower/Request (0.2.0):
+    - Cache
+    - GTMBase64
+    - Moya
+    - MTPower/Basic
+    - MTPower/HUD
+  - MTPower/Utils (0.2.0):
+    - MJRefresh
+  - MTPower/Widgets (0.2.0):
+    - MTPower/Basic
+    - SnapKit
+  - SJMediaCacheServer (1.7.8):
+    - SJMediaCacheServer/Core (= 1.7.8)
+    - SJMediaCacheServer/KTVCocoaHTTPServer (= 1.7.8)
+    - SJUIKit/SQLite3
+  - SJMediaCacheServer/Core (1.7.8):
+    - SJMediaCacheServer/KTVCocoaHTTPServer
+    - SJUIKit/SQLite3
+  - SJMediaCacheServer/KTVCocoaHTTPServer (1.7.8):
+    - CocoaAsyncSocket
+    - SJUIKit/SQLite3
+  - SJUIKit/SQLite3 (0.0.0.59):
+    - SJUIKit/SQLite3/Core (= 0.0.0.59)
+    - SJUIKit/SQLite3/Protocol (= 0.0.0.59)
+    - YYModel
+  - SJUIKit/SQLite3/Core (0.0.0.59):
+    - SJUIKit/SQLite3/Protocol
+    - YYModel
+  - SJUIKit/SQLite3/Protocol (0.0.0.59):
+    - YYModel
+  - SnapKit (5.6.0)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - MTPower (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - BaiduBCEPlayerFull
+    - Cache
+    - CocoaAsyncSocket
+    - GTMBase64
+    - KeychainAccess
+    - lottie-ios
+    - MBProgressHUD
+    - MJRefresh
+    - Moya
+    - SJMediaCacheServer
+    - SJUIKit
+    - SnapKit
+    - YYModel
+
+EXTERNAL SOURCES:
+  MTPower:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  BaiduBCEPlayerFull: 6b2f5b462c391aa952ad19cd8842e70728ee055d
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  MTPower: e3972b23267fb8f6b32d974f44526387a1fbe6bc
+  SJMediaCacheServer: 95bebce42f281fccaff25a5e8284022478ff7ba5
+  SJUIKit: a40111941e408cc17d4c1c23495aa92999e814b0
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: e03eae6d0a6bb1a6691f783b6bf6601c9633411d
+
+COCOAPODS: 1.11.3
