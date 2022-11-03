@@ -22,7 +22,7 @@ public class MTSourceManager {
         do {
             try FileManager.default.removeItem(atPath: filePath)
         } catch {
-            MTLog(#function, "\(filePath) :::>failure")
+            MTLogImagePicker(#function, "\(filePath) :::>failure")
         }
     }
 
@@ -37,7 +37,7 @@ public class MTSourceManager {
     }
 
     public func copyPhotosItemToSandbox(with assets: [PHAsset],
-                                        completion: MTValueBlock<Set<MTSourceCachedItem>>? = nil)
+                                        completion: ((Set<MTSourceCachedItem>)->Void)? = nil)
     {
         let group = DispatchGroup()
         var cachedItems: Set<MTSourceCachedItem> = []
@@ -70,16 +70,16 @@ public class MTSourceManager {
                     try FileManager.default.copyItem(atPath: fromPath, toPath: toPath)
                     let item = MTSourceCachedItem(name: fileName, ext: pathExtension, localId: asset.localIdentifier, localPath: toPath)
                     cachedItems.insert(item)
-                    MTLog("写入沙盒 成功！！！！！")
+                    MTLogImagePicker("写入沙盒 成功！！！！！")
                 } catch {
-                    MTLog("写入沙盒失败 ---- ，", error.localizedDescription)
+                    MTLogImagePicker("写入沙盒失败 ---- ，", error.localizedDescription)
                 }
                 group.leave()
             }
         }
 
         group.notify(queue: DispatchQueue.main) {
-            MTLog("拷贝都完成了")
+            MTLogImagePicker("拷贝都完成了")
             completion?(cachedItems)
         }
     }

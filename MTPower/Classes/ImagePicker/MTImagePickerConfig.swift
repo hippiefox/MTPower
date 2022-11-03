@@ -29,4 +29,11 @@ public struct MTImagePickerConfig{
     }
     
     public static var cellSelectedImage: UIImage?
+    
+    public static var logEnable: Bool = false
+}
+
+func MTLogImagePicker(_ items: Any..., separator: String = " ", terminator: String = "\n"){
+    guard MTImagePickerConfig.logEnable else { return }
+    print(items, separator: separator, terminator: terminator)
 }
