@@ -1,9 +1,3 @@
-//
-//  MTRefreshProtocol.swift
-//  MTPower
-//
-//  Created by PanGu on 2022/10/19.
-//
 
 import Foundation
 import MJRefresh

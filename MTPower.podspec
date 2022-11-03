@@ -40,7 +40,10 @@ Pod::Spec.new do |s|
   
   s.subspec 'Utils' do |uu|
       uu.source_files = 'MTPower/Classes/Utils/*'
+      uu.dependency 'MTPower/Basic'
       uu.dependency 'MJRefresh'
+      uu.dependency 'RealmSwift'#, '~> 10.28.6'
+      
   end
   
   s.subspec 'HUD' do |hh|
@@ -62,6 +65,12 @@ Pod::Spec.new do |s|
       ww.source_files = 'MTPower/Classes/Widgets/*'
       ww.dependency 'MTPower/Basic'
       ww.dependency 'SnapKit'
+      
+  end
+  
+  s.subspec 'ImagePicker' do |ip|
+    ip.source_files = 'MTPower/Classes/ImagePicker/*'
+    ip.dependency 'SnapKit'
   end
   
   s.subspec 'Player' do |pp|

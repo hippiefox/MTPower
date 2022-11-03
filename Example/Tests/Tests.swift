@@ -1,5 +1,4 @@
 import XCTest
-import MTPower
 
 class Tests: XCTestCase {
     
