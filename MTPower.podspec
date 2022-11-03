@@ -73,6 +73,12 @@ Pod::Spec.new do |s|
     ip.dependency 'SnapKit'
   end
   
+  s.subspec 'Download' do |dd|
+    dd.source_files = 'MTPower/Classes/Download/*'
+    dd.dependency 'SJUIKit/SQLite3'
+    dd.dependency 'SJMediaCacheServer'
+  end
+  
   s.subspec 'Player' do |pp|
       pp.source_files = 'MTPower/Classes/Player/*'
       pp.dependency 'SnapKit'
