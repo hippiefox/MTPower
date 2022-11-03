@@ -64,12 +64,14 @@ Pod::Spec.new do |s|
   s.subspec 'Widgets' do |ww|
       ww.source_files = 'MTPower/Classes/Widgets/*'
       ww.dependency 'MTPower/Basic'
+      ww.dependency 'MTPower/Extensions'
       ww.dependency 'SnapKit'
       
   end
   
   s.subspec 'ImagePicker' do |ip|
     ip.source_files = 'MTPower/Classes/ImagePicker/*'
+    ip.source_files = 'MTPower/Classes/Basic/*'
     ip.dependency 'SnapKit'
   end
   
@@ -77,6 +79,7 @@ Pod::Spec.new do |s|
     dd.source_files = 'MTPower/Classes/Download/*'
     dd.dependency 'SJUIKit/SQLite3'
     dd.dependency 'SJMediaCacheServer'
+    dd.dependency 'RealmSwift'#, '~> 10.28.6'
   end
   
   s.subspec 'Player' do |pp|
