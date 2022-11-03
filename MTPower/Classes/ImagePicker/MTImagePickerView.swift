@@ -83,7 +83,7 @@ open class MTImagePickerView: UIView {
     }
     
     deinit {
-        MTLog("------>deinit",self.classForCoder.description())
+        MTLogImagePicker("------>deinit",self.classForCoder.description())
     }
 }
 
