@@ -29,6 +29,8 @@ public struct MTImagePickerConfig{
     }
     
     public static var cellSelectedImage: UIImage?
+    /// 相册中video的标识
+    public static var assetVideoImage: UIImage?
     
     public static var logEnable: Bool = false
 }

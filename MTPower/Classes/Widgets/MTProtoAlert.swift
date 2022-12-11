@@ -57,7 +57,7 @@ open class MTProtoAlert: UIViewController {
         return btn
     }()
 
-    private lazy var tap: UITapGestureRecognizer = {
+    public lazy var tap: UITapGestureRecognizer = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapSelf))
         tap.delegate = self
         return tap

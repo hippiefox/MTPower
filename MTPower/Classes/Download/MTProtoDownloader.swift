@@ -87,7 +87,7 @@ open class MTProtoDownloader: NSObject {
     // MARK: /*download step*/
 
     open func __beginDownload() {
-        guard let task = downloadProvider.ingTasks.first(where: { $0.state != .ing }) else { return }
+        guard let task = downloadProvider.ingTasks.first(where: { $0.state != .ing && $0.state != .pause }) else { return }
 
         __download(task: task)
     }

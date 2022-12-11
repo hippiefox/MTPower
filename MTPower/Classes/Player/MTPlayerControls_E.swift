@@ -186,7 +186,7 @@ open class MTPlayerGestureView: UIView, UIGestureRecognizerDelegate {
 
 open class MTPlayerMiddleView: UIView {
     //MARK: (Buffer)
-    private lazy var bufferContainer: UIView = UIView()
+    public lazy var bufferContainer: UIView = UIView()
     public var bufferingLottiePath: String!
     open func showLoading(){
         guard let path = bufferingLottiePath else{   return}
@@ -209,8 +209,8 @@ open class MTPlayerMiddleView: UIView {
     
     // MARK: (提示语)
 
-    private lazy var tipsContainer: UIView = UIView()
-    private lazy var timeTipsLabel: UILabel = {
+    public lazy var tipsContainer: UIView = UIView()
+    public lazy var timeTipsLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 26, weight: .medium)
         label.textColor = .white.withAlphaComponent(0.7)
@@ -414,7 +414,7 @@ open class MTPlayerAppdendixView: UIView {
 public class PlayerRateButton: MTButton {
     private var itemSize: CGSize = MTPlayerConfig.playerItemIconSize
 
-    private lazy var itemBoundsView: UIView = {
+    public lazy var itemBoundsView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         view.isUserInteractionEnabled = false

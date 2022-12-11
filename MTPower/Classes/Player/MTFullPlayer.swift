@@ -69,6 +69,7 @@ open class MTFullPlayer: MTPlayer {
         super.playerPlaybackDidFinish(noti)
     }
 
+    var rate: MTPlayerConfig.Rate = .r_1_0
     override open func handleControlsOption(_ opt: MTBasicPlayerControls.Option) {
         switch opt {
         case .play:
@@ -77,8 +78,15 @@ open class MTFullPlayer: MTPlayer {
             // 用户手动点击了暂停
             fullControlsView.bufferManager.isStopForAWhile = true
         case .rate:
-            fullControlsView.startTrial()
-            return
+            let alert = MTPlayerAlert<MTPlayerConfig.Rate>.init(defaultOption: self.rate, options: MTPlayerConfig.Rate.allCases, position: .bottom)
+            alert.optBlock = { [weak self] opt in
+                self?.rate = opt
+                self?.bdPlayer.playbackRate = opt.rawValue
+                if let controls = self?.basicControlsView as? MTFullPlayerControls{
+                    controls.rate = opt
+                }
+            }
+            self.present(alert, animated: true)
         default: break
         }
         super.handleControlsOption(opt)

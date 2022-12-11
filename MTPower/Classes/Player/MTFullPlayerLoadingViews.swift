@@ -160,7 +160,7 @@ private class LoadingCell: UITableViewCell {
         }
     }
 
-    private lazy var titleLabel: UILabel = {
+    public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = MTPlayerLoadingTipsViewConfig.textFont
         label.textColor = MTPlayerLoadingTipsViewConfig.textColor

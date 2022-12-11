@@ -87,13 +87,13 @@ public class MTNavigationBar: UIView {
     public weak var weakController: UIViewController?
 
     // Private
-    private lazy var backgroundView = UIImageView()
-    private lazy var contentView = UIView()
-    private lazy var shadowView = UIView()
-    private var leftContentView: UIView?
-    private var rightContentView: UIView?
+    public lazy var backgroundView = UIImageView()
+    public lazy var contentView = UIView()
+    public lazy var shadowView = UIView()
+    public var leftContentView: UIView?
+    public var rightContentView: UIView?
     var titleLabel: UILabel?
-    private var _titleView: UIView? {
+    public var _titleView: UIView? {
         didSet {
             guard let _titleView = _titleView else { return }
             contentView.addSubview(_titleView)

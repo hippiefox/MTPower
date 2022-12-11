@@ -9,12 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSData (WCS_ETAG)
-- (NSString *)wcs_etag;
-
-- (UInt32)commonCrc32;
-
-
+@interface NSData (XOR)
 /// 对字节进行xor处理
 /// - Parameter data: 原始data
 + (NSData *)mtp_xor:(NSData *)data;

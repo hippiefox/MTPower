@@ -17,22 +17,48 @@ open class MTImagePickerCell: UICollectionViewCell{
         return view
     }()
     
-    public lazy var selectedImage: UIImageView = {
+    public lazy var selectedImageView: UIImageView = {
         let view = UIImageView()
         view.image = MTImagePickerConfig.cellSelectedImage
         return view
+    }()
+    
+    public lazy var videoImageView: UIImageView = {
+        let view = UIImageView()
+        view.image = MTImagePickerConfig.assetVideoImage
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
+    public lazy var durationLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 10)
+        label.textColor = .white
+        return label
     }()
 
     
     open var asset: PHAsset?{
         didSet{
+            guard let asset = asset else{   return}
             loadPhotoIfNeeded()
+            
+            videoImageView.isHidden =  asset.duration > 0 ? false : true
+            if asset.duration > 0{
+                let d = Int(asset.duration)
+                let dTimeStr = d.mt_2TimeFormat()
+                durationLabel.text = dTimeStr
+                durationLabel.isHidden = false
+            }else{
+                durationLabel.text = nil
+                durationLabel.isHidden = true
+            }
         }
     }
     
     open var isChoosed: Bool = false{
         didSet{
-            selectedImage.isHidden = !isChoosed
+            selectedImageView.isHidden = !isChoosed
         }
     }
 
@@ -42,12 +68,25 @@ open class MTImagePickerCell: UICollectionViewCell{
         super.init(frame: frame)
         contentView.addSubview(iconImageView)
         iconImageView.snp.makeConstraints { $0.edges.equalToSuperview()}
-        selectedImage.isHidden = true
-        contentView.addSubview(selectedImage)
-        selectedImage.snp.makeConstraints {
+        selectedImageView.isHidden = true
+        contentView.addSubview(selectedImageView)
+        selectedImageView.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 22, height: 22))
             $0.top.equalTo(8)
             $0.right.equalToSuperview().offset(-8)
+        }
+        videoImageView.isHidden = true
+        contentView.addSubview(videoImageView)
+        videoImageView.snp.makeConstraints {
+            $0.width.height.equalTo(16)
+            $0.left.equalTo((6))
+            $0.bottom.equalToSuperview().offset((-6))
+        }
+        durationLabel.isHidden = true
+        contentView.addSubview(durationLabel)
+        durationLabel.snp.makeConstraints {
+            $0.centerY.equalTo(videoImageView)
+            $0.left.equalTo(videoImageView.snp.right).offset(2)
         }
     }
     

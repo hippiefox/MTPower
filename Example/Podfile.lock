@@ -12,28 +12,29 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - MTPower (0.2.0):
-    - MTPower/Basic (= 0.2.0)
-    - MTPower/Download (= 0.2.0)
-    - MTPower/Extensions (= 0.2.0)
-    - MTPower/HUD (= 0.2.0)
-    - MTPower/ImagePicker (= 0.2.0)
-    - MTPower/Player (= 0.2.0)
-    - MTPower/Request (= 0.2.0)
-    - MTPower/Utils (= 0.2.0)
-    - MTPower/Widgets (= 0.2.0)
-  - MTPower/Basic (0.2.0):
+  - MTPower (0.2.1):
+    - MTPower/Basic (= 0.2.1)
+    - MTPower/Download (= 0.2.1)
+    - MTPower/Extensions (= 0.2.1)
+    - MTPower/HUD (= 0.2.1)
+    - MTPower/ImagePicker (= 0.2.1)
+    - MTPower/Player (= 0.2.1)
+    - MTPower/Request (= 0.2.1)
+    - MTPower/Utils (= 0.2.1)
+    - MTPower/Widgets (= 0.2.1)
+  - MTPower/Basic (0.2.1):
     - KeychainAccess (~> 4.2.1)
-  - MTPower/Download (0.2.0):
+  - MTPower/Download (0.2.1):
+    - RealmSwift
     - SJMediaCacheServer
     - SJUIKit/SQLite3
-  - MTPower/Extensions (0.2.0)
-  - MTPower/HUD (0.2.0):
+  - MTPower/Extensions (0.2.1)
+  - MTPower/HUD (0.2.1):
     - lottie-ios
     - MBProgressHUD
-  - MTPower/ImagePicker (0.2.0):
+  - MTPower/ImagePicker (0.2.1):
     - SnapKit
-  - MTPower/Player (0.2.0):
+  - MTPower/Player (0.2.1):
     - BaiduBCEPlayerFull (~> 2.3.7)
     - MTPower/Basic
     - MTPower/Extensions
@@ -42,18 +43,19 @@ PODS:
     - SJMediaCacheServer
     - SJUIKit/SQLite3
     - SnapKit
-  - MTPower/Request (0.2.0):
+  - MTPower/Request (0.2.1):
     - Cache
     - GTMBase64
     - Moya
     - MTPower/Basic
     - MTPower/HUD
-  - MTPower/Utils (0.2.0):
+  - MTPower/Utils (0.2.1):
     - MJRefresh
     - MTPower/Basic
     - RealmSwift
-  - MTPower/Widgets (0.2.0):
+  - MTPower/Widgets (0.2.1):
     - MTPower/Basic
+    - MTPower/Extensions
     - SnapKit
   - Realm (10.32.1):
     - Realm/Headers (= 10.32.1)
@@ -119,7 +121,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  MTPower: 140ee37410314d3b83b0c0ef434d8157527a6073
+  MTPower: bc1cefc937dbf67e1d69a4d60bb096ce91b7c99f
   Realm: fd821b81e5479be497cc5bca2e020f707d8323eb
   RealmSwift: 8635e4cc524790916d72b0ffa51c1a91f4ec9668
   SJMediaCacheServer: 95bebce42f281fccaff25a5e8284022478ff7ba5

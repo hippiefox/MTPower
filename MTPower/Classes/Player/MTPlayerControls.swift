@@ -35,10 +35,10 @@ open class MTPlayerControls: MTBasicPlayerControls {
     // 播放器倍速
     public var rate: MTPlayerConfig.Rate = .r_1_0{
         didSet{
-            rateButton.titleNormal = String(format: "%.1f", rate.rawValue)
+            rateButton.titleNormal = String(format: "%.2f", rate.rawValue)
         }
     }
-    private lazy var rateButton: PlayerRateButton = {
+    public lazy var rateButton: PlayerRateButton = {
         let button = PlayerRateButton()
         button.titleNormal = "1.0"
         button.addTarget(self, action: #selector(actionRate), for: .touchUpInside)
@@ -115,7 +115,7 @@ open class MTPlayerControls: MTBasicPlayerControls {
 
     private var panStartValue: TimeInterval = 0
     private var panBrightnessTime: Int = 0
-    private lazy var volumeSlider: UISlider = {
+    public lazy var volumeSlider: UISlider = {
         let volumeView = MPVolumeView(frame: .init(x: 0, y: 0, width: 200, height: 6))
         volumeView.showsVolumeSlider = false
         volumeView.showsRouteButton = false
@@ -206,7 +206,7 @@ open class MTPlayerControls: MTBasicPlayerControls {
         let str = toTimeStr + " / " + Int(duration).mt_2TimeFormat()
         let toTimeRange = (str as NSString).range(of: toTimeStr)
         let mAttr = NSMutableAttributedString(string: str)
-        mAttr.addAttributes([.foregroundColor: UIColor.white,.font: UIFont.systemFont(ofSize: 22, weight: .medium)], range: toTimeRange)
+        mAttr.addAttributes([.foregroundColor: UIColor.white,.font: UIFont.systemFont(ofSize: 30, weight: .medium)], range: toTimeRange)
         middleView.showTimeTips(mAttr)
     }
 

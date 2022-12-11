@@ -72,7 +72,7 @@ open class MTPlaceholderTextView: UIView {
         return view
     }()
 
-    private lazy var placeHolderLabel: UILabel = {
+    public lazy var placeHolderLabel: UILabel = {
         let label = UILabel()
         label.font = font
         label.textColor = placeholderColor
@@ -80,7 +80,7 @@ open class MTPlaceholderTextView: UIView {
         return label
     }()
 
-    private lazy var textLimitLabel: UILabel = {
+    public lazy var textLimitLabel: UILabel = {
         let label = UILabel()
         label.font = textLimitFont
         label.textColor = textLimitColor

@@ -150,7 +150,7 @@ open class MTFullPlayerControls: MTPlayerControls {
     }
     
     // MARK: /*trial*/
-    private lazy var trialLabel: UILabel = {
+    public lazy var trialLabel: UILabel = {
         let label = UILabel()
         label.textColor = MTPlayerConfig.tryingColor
         label.font = .systemFont(ofSize: 13)
