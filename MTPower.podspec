@@ -71,6 +71,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'ImagePicker' do |ip|
     ip.source_files = 'MTPower/Classes/ImagePicker/*'
+    ip.dependency 'MTPower/Extensions'
     ip.dependency 'SnapKit'
   end
   
