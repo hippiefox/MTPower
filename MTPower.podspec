@@ -27,6 +27,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.public_header_files = 'MTPower/Classes/**/*.h'
   s.ios.deployment_target = '12.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'MTPower/Classes/**/*'
   
@@ -72,6 +73,7 @@ Pod::Spec.new do |s|
   s.subspec 'ImagePicker' do |ip|
     ip.source_files = 'MTPower/Classes/ImagePicker/*'
     ip.dependency 'SnapKit'
+    ip.dependency 'MTPower/Extensions'
   end
   
   s.subspec 'Download' do |dd|
