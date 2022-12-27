@@ -2,7 +2,6 @@
 //  MTCell.swift
 //  MTPower
 //
-//  Created by PanGu on 2022/10/18.
 //
 
 import Foundation
@@ -59,7 +58,7 @@ public class MT_CollectionCell<T: UICollectionViewCell>{
 public class MT_CollectionReuse<T: UICollectionReusableView>{
     public static func header(_ collectionView: UICollectionView,
                               indexPath: IndexPath) -> T{
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                      withReuseIdentifier: T.mt_reusedId,
                                                                      for: indexPath)
         return header as! T
@@ -67,7 +66,7 @@ public class MT_CollectionReuse<T: UICollectionReusableView>{
     
     public static func footer(_ collectionView: UICollectionView,
                               indexPath: IndexPath) -> T{
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter
                                                                      , withReuseIdentifier: T.mt_reusedId,
                                                                      for: indexPath)
         return header as! T

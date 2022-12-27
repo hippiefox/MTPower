@@ -107,12 +107,14 @@ open class MTPlaceholderTextView: UIView {
                                height: bounds.height - textInset.top - textInset.bottom)
 
         if let txt = placeHolderLabel.text {
-            let maxW: CGFloat = textView.frame.size.width - (textInset.right + textView.textContainerInset.right + textView.textContainerInset.left + textInset.left)
+            let fixedLeftInset: CGFloat = 4
+            let maxW: CGFloat = textView.frame.size.width - (fixedLeftInset + textInset.right + textView.textContainerInset.right + textView.textContainerInset.left + textInset.left)
             let textSize = (txt as NSString).boundingRect(with: CGSize(width: maxW, height: CGFloat.greatestFiniteMagnitude),
                                                           options: .usesLineFragmentOrigin,
                                                           attributes: [.font: font],
                                                           context: nil).size
-            placeHolderLabel.frame.origin = CGPoint(x: textInset.left + textView.textContainerInset.left, y: textInset.top + textView.textContainerInset.top)
+            
+            placeHolderLabel.frame.origin = CGPoint(x: fixedLeftInset + textInset.left + textView.textContainerInset.left, y: textInset.top + textView.textContainerInset.top)
             placeHolderLabel.frame.size = textSize
         }
     }

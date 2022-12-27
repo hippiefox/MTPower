@@ -126,7 +126,7 @@ extension MTProtoAlert: UIViewControllerAnimatedTransitioning {
     open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let isPresenting = view.superview == nil
         var targetPosition = position
-        if MTPowerConfig.default.allowedOrientation != .portrait,
+        if MTDeviceOrientation.allowedOrientation != .portrait,
            let __p = rotatedPosition {
             targetPosition = __p
         }

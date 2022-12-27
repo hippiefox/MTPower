@@ -25,13 +25,24 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(web, animated: true)
         
     }
+    
+    private lazy var textView: MTPlaceholderTextView = {
+        let view = MTPlaceholderTextView()
+        MT_ViewBoarder(view, 1, .black)
+        view.textLimit = 10
+        view.placeholderText = "placeholder"
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(button)
-        button.snp.makeConstraints {
-            $0.width.height.equalTo(100)
-            $0.center.equalToSuperview()
+        
+        view.addSubview(textView)
+        textView.snp.makeConstraints {
+            $0.left.equalTo(MT_Baseline(20))
+            $0.right.equalToSuperview().offset(MT_Baseline(-20))
+            $0.top.equalTo(MT_Baseline(100))
+            $0.height.equalTo(200)
         }
     }
 

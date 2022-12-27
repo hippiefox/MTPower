@@ -216,7 +216,7 @@ extension MTNavigationBar {
                 titleViewX = titleViewLeft
             }
             titleView.frame = CGRect(x: titleViewX, y: 0, width: titleViewW, height: titleViewH)
-            contentView.bringSubview(toFront: titleView)
+            contentView.bringSubviewToFront(titleView)
         }
     }
 }

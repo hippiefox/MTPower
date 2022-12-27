@@ -21,6 +21,7 @@ open class MTPlayer: MTBasicPlayer{
     }()
     
     public var softHardMode: MTPlayerConfig.SoftHardDecode = .soft
+    public var rate: MTPlayerConfig.Rate = .r_1_0
     
     open override func handleControlsOption(_ opt: MTBasicPlayerControls.Option) {
         switch opt{
@@ -34,10 +35,11 @@ open class MTPlayer: MTBasicPlayer{
                 bdPlayer.play()
             }
         case .rate:
-            let defaultRate = MTPlayerConfig.Rate.init(rawValue:bdPlayer.playbackRate) ?? .r_1_0
+            let defaultRate = self.rate
             MTPlayerAlert<MTPlayerConfig.Rate>.showRate(from: self, defaultOpt: defaultRate) { rate in
+                self.rate = rate
                 self.bdPlayer.playbackRate = rate.rawValue
-                self.controlsView.rate = rate
+                (self.__playControl as? MTPlayerControls)?.rate = rate
             }
         case .scale:
             var scale: MTPlayerConfig.Scale!
@@ -45,6 +47,7 @@ open class MTPlayer: MTBasicPlayer{
             case .none, .aspectFit: scale = .default
             case .fill: scale = .stretch
             case .aspectFill: scale = .fill
+            @unknown default:   break
             }
             MTPlayerAlert<MTPlayerConfig.Scale>.showScale(from: self, defaultOpt: scale, completion: { scale in
                 switch scale{
@@ -54,31 +57,23 @@ open class MTPlayer: MTBasicPlayer{
                 }
             })
         case .pause:
-            if let controlView = basicControlsView as? MTPlayerControls{
-                controlView.toggleShowAsideViews(true)
-            }
+            (self.__playControl as? MTPlayerControls)?.toggleShowAsideViews(true)
             super.handleControlsOption(opt)
         default:    super.handleControlsOption(opt)
         }
     }
     
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        basicControlsView.removeFromSuperview()
-        basicControlsView = controlsView
-        view.addSubview(basicControlsView)
-        basicControlsView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+    open override func setupPlayControls() {
+        __playControl = controlsView
     }
     
     open override func playerBufferingEnd(_ noti: NSNotification) {
         super.playerBufferingEnd(noti)
-        controlsView.middleView.hideLoading()
+        (self.__playControl as? MTPlayerControls)?.middleView.hideLoading()
     }
     
     open override func playerBufferingStart(_ noti: NSNotification) {
         super.playerBufferingStart(noti)
-        controlsView.middleView.showLoading()
+        (self.__playControl as? MTPlayerControls)?.middleView.showLoading()
     }
 }

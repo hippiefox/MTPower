@@ -8,25 +8,8 @@
 import Foundation
 import UIKit
 
-public extension MTBasicPlayerControls {
-    enum Option {
-        case play
-        case pause
-        case close
-        case slideTo(Float)
-        case sliding(Float)
-        case longPress(Bool)
-        case rotate
-        case scale
-        case softHard
-        case lock(Bool)
-        case doubleTap
-        case rate
-    }
-}
 
-open class MTBasicPlayerControls: UIView {
-    public var optionBlock: MTValueBlock<Option>?
+open class MTBasicPlayerControls: MTProtoPlayControls {
     
     open var isPlaying: Bool = false {
         didSet {

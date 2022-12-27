@@ -15,7 +15,7 @@ extension MTButton {
     }
 }
 
-public class MTButton: UIControl {
+open class MTButton: UIControl {
     public var maxHeight: CGFloat = 0
     public var maxWidth: CGFloat = 0
     public var contentInset: UIEdgeInsets = .zero
@@ -105,9 +105,7 @@ public class MTButton: UIControl {
     }
     
     override public var intrinsicContentSize: CGSize {
-        guard isFlexSize == true else{
-            return super.intrinsicContentSize
-        }
+        guard isFlexSize == true else{  return super.intrinsicContentSize}
         
         var text = titleNormal ?? ""
         

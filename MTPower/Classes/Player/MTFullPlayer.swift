@@ -24,15 +24,15 @@ open class MTFullPlayer: MTPlayer {
         }
         return view
     }()
-
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        configureUI()
+    
+    open override func setupPlayControls() {
+        __playControl = fullControlsView
     }
 
     override open func configurePlayer() {
         if let playItem = playItem {
-            fullControlsView.title = playItem.filename
+            (__playControl as? MTFullPlayerControls)?.title = playItem.filename
+            
             if playItem.isLocalPath {
                 fileURL = URL(fileURLWithPath: playItem.fileUrl)
             } else {
@@ -53,40 +53,30 @@ open class MTFullPlayer: MTPlayer {
             }
             
             headerJSONStr = playItem.headerJSONStr
-            fullControlsView.loadingTips = playItem.loadingTips
-            fullControlsView.bufferItem = playItem.bufferItem
+            (__playControl as? MTFullPlayerControls)?.loadingTips = playItem.loadingTips
+            (__playControl as? MTFullPlayerControls)?.bufferItem = playItem.bufferItem
         }
         super.configurePlayer()
     }
 
     override open func playerPlaybackIsPreparedToPlay(_ noti: NSNotification) {
         super.playerPlaybackIsPreparedToPlay(noti)
-        fullControlsView.isReadyToPlay = true
+        (__playControl as? MTFullPlayerControls)?.isReadyToPlay = true
+        
     }
 
     override open func playerPlaybackDidFinish(_ noti: NSNotification) {
-        fullControlsView.isReadyToPlay = false
+        (__playControl as? MTFullPlayerControls)?.isReadyToPlay = false
         super.playerPlaybackDidFinish(noti)
     }
 
-    var rate: MTPlayerConfig.Rate = .r_1_0
     override open func handleControlsOption(_ opt: MTBasicPlayerControls.Option) {
         switch opt {
         case .play:
-            fullControlsView.bufferManager.isStopForAWhile = false
+            (__playControl as? MTFullPlayerControls)?.bufferManager.isStopForAWhile = false
         case .pause:
             // 用户手动点击了暂停
-            fullControlsView.bufferManager.isStopForAWhile = true
-        case .rate:
-            let alert = MTPlayerAlert<MTPlayerConfig.Rate>.init(defaultOption: self.rate, options: MTPlayerConfig.Rate.allCases, position: .bottom)
-            alert.optBlock = { [weak self] opt in
-                self?.rate = opt
-                self?.bdPlayer.playbackRate = opt.rawValue
-                if let controls = self?.basicControlsView as? MTFullPlayerControls{
-                    controls.rate = opt
-                }
-            }
-            self.present(alert, animated: true)
+            (__playControl as? MTFullPlayerControls)?.bufferManager.isStopForAWhile = true
         default: break
         }
         super.handleControlsOption(opt)
@@ -97,14 +87,14 @@ open class MTFullPlayer: MTPlayer {
         case .pause: super.handleControlsOption(.pause)
         case .play: super.handleControlsOption(.play)
         case .bufferPeriodEnds:
-            fullControlsView.bufferManager.isStopForAWhile = true
+            (__playControl as? MTFullPlayerControls)?.bufferManager.isStopForAWhile = true
         case let .slideLimit(targetTime):
             super.handleControlsOption(.pause)
-            fullControlsView.bufferManager.isStopForAWhile = true
+            (__playControl as? MTFullPlayerControls)?.bufferManager.isStopForAWhile = true
             bdPlayer.currentPlaybackTime = .init(targetTime)
         case .trialPeriodEnd:
             super.handleControlsOption(.pause)
-            fullControlsView.bufferManager.reset(bufferItem: nil)
+            (__playControl as? MTFullPlayerControls)?.bufferManager.reset(bufferItem: nil)
         }
     }
     
@@ -118,18 +108,5 @@ open class MTFullPlayer: MTPlayer {
         else{   return}
         
         SJMediaCacheServer.shared().removeCache(for: self.fileURL)
-    }
-}
-
-// MARK: - - Configure UI
-
-extension MTFullPlayer {
-    private func configureUI() {
-        basicControlsView.removeFromSuperview()
-        basicControlsView = fullControlsView
-        view.addSubview(basicControlsView)
-        basicControlsView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
 }

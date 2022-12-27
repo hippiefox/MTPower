@@ -14,6 +14,8 @@ open class MTImagePickerCell: UICollectionViewCell{
     public var deliveryMode: PHImageRequestOptionsDeliveryMode = .fastFormat
     public lazy var iconImageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         return view
     }()
     

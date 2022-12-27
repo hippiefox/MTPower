@@ -14,6 +14,7 @@ import BDCloudMediaPlayer
     播放/暂停、时间进度显示、屏幕旋转、关闭、播放文件的名称展示
  */
 open class MTBasicPlayer: MTProtoPlayer{
+    
     open lazy var basicControlsView: MTBasicPlayerControls = {
         let view = MTBasicPlayerControls()
         view.optionBlock = { [weak self] opt in
@@ -28,25 +29,29 @@ open class MTBasicPlayer: MTProtoPlayer{
         configureUI()
     }
     
+    open override func setupPlayControls() {
+        __playControl = basicControlsView
+    }
+        
     open override var prefersStatusBarHidden: Bool{ true}
     
     open override func playerPlaybackIsPreparedToPlay(_ noti: NSNotification) {
         super.playerPlaybackIsPreparedToPlay(noti)
-        basicControlsView.duration = bdPlayer.duration
+        (__playControl as? MTBasicPlayerControls)?.duration = bdPlayer.duration
+        // 配置拖拽手势的时长
         MTPlayerConfig.playerSlideDuration = min(Float(bdPlayer.duration), MTPlayerConfig.__defaultPlayerSlideDuration)
         startTimer()
     }
     
     open override func playerPlaybackStateDidChange(_ noti: NSNotification) {
         super.playerPlaybackStateDidChange(noti)
-        basicControlsView.isPlaying = bdPlayer.isPlaying()
+        (__playControl as? MTBasicPlayerControls)?.isPlaying = bdPlayer.isPlaying()
     }
     
     open override func playerPlaybackDidFinish(_ noti: NSNotification) {
         super.playerPlaybackDidFinish(noti)
         stopTimer(isPlayEnd: true)
     }
-    
     
     public var __timer: DispatchSourceTimer?
     open func startTimer(){
@@ -67,12 +72,12 @@ open class MTBasicPlayer: MTProtoPlayer{
         __timer?.cancel()
         __timer = nil
         if isPlayEnd{
-            basicControlsView.playTime = 0
+            (__playControl as? MTBasicPlayerControls)?.playTime = 0
         }
     }
     
     open func timerBeat(){
-        basicControlsView.playTime = bdPlayer.currentPlaybackTime
+        (__playControl as? MTBasicPlayerControls)?.playTime = bdPlayer.currentPlaybackTime
     }
     
     open func handleControlsOption(_ opt: MTBasicPlayerControls.Option){
@@ -85,7 +90,6 @@ open class MTBasicPlayer: MTProtoPlayer{
         default:    break
         }
     }
-    
 }
 
 //MARK: Actions
@@ -116,15 +120,15 @@ extension MTBasicPlayer{
     }
     
     @objc open func actionRotate(){
-        MTPowerConfig.default.rotateToggle()
+        MTDeviceOrientation.rotateToggle()
     }
 }
 
 //MARK:-- Configure UI
 extension MTBasicPlayer{
     private func configureUI(){
-        view.addSubview(basicControlsView)
-        basicControlsView.snp.makeConstraints {
+        view.addSubview(__playControl)
+        __playControl.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }

@@ -43,7 +43,7 @@ open class MTViewController: UIViewController {
 
         if let mt_navigationBar = mt_navigationBar {
             mt_navigationBar.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: MT_NAV_HEIGHT)
-            view.bringSubview(toFront: mt_navigationBar)
+            view.bringSubviewToFront(mt_navigationBar)
         }
     }
 

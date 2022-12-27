@@ -38,7 +38,7 @@ public struct MTPhotoAccess {
         let ac = UIAlertController.init(title: MTPhotoAccess.photoAuthString, message: nil, preferredStyle: .alert)
         if let confirmString = MTPhotoAccess.confirmString{
             let action = UIAlertAction(title: confirmString, style: .default) { _ in
-                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
             ac.addAction(action)
         }

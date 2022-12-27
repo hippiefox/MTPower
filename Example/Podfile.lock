@@ -12,29 +12,29 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - MTPower (0.2.1):
-    - MTPower/Basic (= 0.2.1)
-    - MTPower/Download (= 0.2.1)
-    - MTPower/Extensions (= 0.2.1)
-    - MTPower/HUD (= 0.2.1)
-    - MTPower/ImagePicker (= 0.2.1)
-    - MTPower/Player (= 0.2.1)
-    - MTPower/Request (= 0.2.1)
-    - MTPower/Utils (= 0.2.1)
-    - MTPower/Widgets (= 0.2.1)
-  - MTPower/Basic (0.2.1):
+  - MTPower (0.2.2):
+    - MTPower/Basic (= 0.2.2)
+    - MTPower/Download (= 0.2.2)
+    - MTPower/Extensions (= 0.2.2)
+    - MTPower/HUD (= 0.2.2)
+    - MTPower/ImagePicker (= 0.2.2)
+    - MTPower/Player (= 0.2.2)
+    - MTPower/Request (= 0.2.2)
+    - MTPower/Utils (= 0.2.2)
+    - MTPower/Widgets (= 0.2.2)
+  - MTPower/Basic (0.2.2):
     - KeychainAccess (~> 4.2.1)
-  - MTPower/Download (0.2.1):
+  - MTPower/Download (0.2.2):
     - RealmSwift
     - SJMediaCacheServer
     - SJUIKit/SQLite3
-  - MTPower/Extensions (0.2.1)
-  - MTPower/HUD (0.2.1):
+  - MTPower/Extensions (0.2.2)
+  - MTPower/HUD (0.2.2):
     - lottie-ios
     - MBProgressHUD
-  - MTPower/ImagePicker (0.2.1):
+  - MTPower/ImagePicker (0.2.2):
     - SnapKit
-  - MTPower/Player (0.2.1):
+  - MTPower/Player (0.2.2):
     - BaiduBCEPlayerFull (~> 2.3.7)
     - MTPower/Basic
     - MTPower/Extensions
@@ -43,17 +43,17 @@ PODS:
     - SJMediaCacheServer
     - SJUIKit/SQLite3
     - SnapKit
-  - MTPower/Request (0.2.1):
+  - MTPower/Request (0.2.2):
     - Cache
     - GTMBase64
     - Moya
     - MTPower/Basic
     - MTPower/HUD
-  - MTPower/Utils (0.2.1):
+  - MTPower/Utils (0.2.2):
     - MJRefresh
     - MTPower/Basic
     - RealmSwift
-  - MTPower/Widgets (0.2.1):
+  - MTPower/Widgets (0.2.2):
     - MTPower/Basic
     - MTPower/Extensions
     - SnapKit
@@ -121,7 +121,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  MTPower: bc1cefc937dbf67e1d69a4d60bb096ce91b7c99f
+  MTPower: ec5d6a87a93fc6b6add4bb0f7c26451868a11c04
   Realm: fd821b81e5479be497cc5bca2e020f707d8323eb
   RealmSwift: 8635e4cc524790916d72b0ffa51c1a91f4ec9668
   SJMediaCacheServer: 95bebce42f281fccaff25a5e8284022478ff7ba5

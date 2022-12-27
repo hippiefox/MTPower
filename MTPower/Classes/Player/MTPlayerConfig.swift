@@ -49,7 +49,7 @@ public struct MTPlayerConfig{
     public static var volume: UIImage?
     public static var brightness: UIImage?
     public static var accelerate: UIImage?
-    
+    //MARK: (titles)
     public static var tryingTips: String?
     public static var tryingEndTips: String?
     public static var lockString: String?

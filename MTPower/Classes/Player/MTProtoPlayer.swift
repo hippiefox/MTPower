@@ -18,12 +18,20 @@ open class MTProtoPlayer: UIViewController {
     public var headerJSONStr: String?
 
     public var bdPlayer: BDCloudMediaPlayerController!
+    
+    public var __playControl: MTProtoPlayControls!
+
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        setupPlayControls()
         addBDPlayerNoti()
         configureUI()
         configurePlayer()
+    }
+    
+    open func setupPlayControls(){
+        
     }
 
     open func configurePlayer() {

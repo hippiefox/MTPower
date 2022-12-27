@@ -2,7 +2,6 @@
 //  MTDevice.swift
 //  MTPower
 //
-//  Created by PanGu on 2022/10/18.
 //
 
 import Foundation
@@ -25,9 +24,8 @@ public struct MTDevice {
         let key = MTPowerConfig.deviceKeychainKey ?? MTDevice.bundleId
         let kcService = Keychain(service: service)
 
-        if let deviceId = try? kcService.get(key),
-           let _ = deviceId {
-            return deviceId!
+        if let deviceId = try? kcService.get(key){
+            return deviceId
         }
 
         let uuidRef = CFUUIDCreate(kCFAllocatorDefault)
