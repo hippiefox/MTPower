@@ -67,7 +67,9 @@ public struct MTPlayerConfig{
     public static var playerSlideDuration: Float = 5 * 60
     public static var __defaultPlayerSlideDuration: Float = 5 * 60
     /// 自动隐藏controls的倒计时长
-    public static var playerAutoHideItemsDuration: TimeInterval = 5
+    public static var playerAutoHideItemsDuration: TimeInterval = 3
+    
+    public static var playerControlsPauseBackgroundColor: UIColor = UIColor.black.withAlphaComponent(0.2)
 }
 
 //MARK: Player Option

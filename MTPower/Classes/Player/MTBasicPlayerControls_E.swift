@@ -121,6 +121,16 @@ open class MTPlayerBottomView: UIView {
     @objc private func actionRotate(){
         optionBlock?(.rotate)
     }
+    
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        for sub in self.subviews{
+            if sub.frame.contains(point){
+                return sub
+            }
+        }
+        return nil
+    }
+
 }
 
 // MARK: - TopView

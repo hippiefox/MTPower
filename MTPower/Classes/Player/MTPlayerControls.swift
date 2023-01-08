@@ -189,7 +189,16 @@ open class MTPlayerControls: MTBasicPlayerControls {
 
     // MARK: /*控件的展示与隐藏*/
 
-    public var isShowAsideViews: Bool = true
+    public var isShowAsideViews: Bool = true{
+        didSet{
+            if isShowAsideViews{
+                self.backgroundColor = MTPlayerConfig.playerControlsPauseBackgroundColor
+            }else{
+                self.backgroundColor = .clear
+            }
+        }
+    }
+
     public func toggleShowAsideViews(_ isShow: Bool) {
         isShowAsideViews = isShow
         let apViews = appendixView.subviews

@@ -14,7 +14,7 @@ import Foundation
  }
  */
 
-struct MTDeviceOrientation {
+public struct MTDeviceOrientation {
     public static var allowedOrientation: UIInterfaceOrientationMask = .portrait
     
     public static func rotateHrizontal(){

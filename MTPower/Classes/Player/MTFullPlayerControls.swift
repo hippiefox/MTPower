@@ -138,12 +138,12 @@ open class MTFullPlayerControls: MTPlayerControls {
             let d2 = Float(bufferItem.min_drag_duration / 1000)
             let maxDuration = max(d2, d1)
             if targetDuration > maxDuration{
-                self.bufferOption?(.slideLimit(maxDuration))
+                middleView.hideTips()
+                let minDuration = min(targetDuration, maxDuration)
+                self.bufferOption?(.slideLimit(minDuration))
             }else{
                 super.handleOption(opt)
             }
-            let minDuration = min(targetDuration, maxDuration)
-            self.bufferOption?(.slideLimit(minDuration))
         } else {
             super.handleOption(opt)
         }
