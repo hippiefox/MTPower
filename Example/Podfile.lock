@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.6.2)
-  - BaiduBCEPlayerFull (2.3.7)
+  - BaiduBCEPlayerFull (3.5.0)
   - Cache (6.0.0)
   - CocoaAsyncSocket (7.6.5)
   - GTMBase64 (1.0.1)
@@ -12,31 +12,31 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - MTPower (0.2.3):
-    - MTPower/Basic (= 0.2.3)
-    - MTPower/Download (= 0.2.3)
-    - MTPower/Extensions (= 0.2.3)
-    - MTPower/HUD (= 0.2.3)
-    - MTPower/ImagePicker (= 0.2.3)
-    - MTPower/Player (= 0.2.3)
-    - MTPower/Request (= 0.2.3)
-    - MTPower/Utils (= 0.2.3)
-    - MTPower/Widgets (= 0.2.3)
-  - MTPower/Basic (0.2.3):
+  - MTPower (0.2.5):
+    - MTPower/Basic (= 0.2.5)
+    - MTPower/Download (= 0.2.5)
+    - MTPower/Extensions (= 0.2.5)
+    - MTPower/HUD (= 0.2.5)
+    - MTPower/ImagePicker (= 0.2.5)
+    - MTPower/Player (= 0.2.5)
+    - MTPower/Request (= 0.2.5)
+    - MTPower/Utils (= 0.2.5)
+    - MTPower/Widgets (= 0.2.5)
+  - MTPower/Basic (0.2.5):
     - KeychainAccess (~> 4.2.1)
-  - MTPower/Download (0.2.3):
+  - MTPower/Download (0.2.5):
     - RealmSwift
     - SJMediaCacheServer
     - SJUIKit/SQLite3
-  - MTPower/Extensions (0.2.3)
-  - MTPower/HUD (0.2.3):
+  - MTPower/Extensions (0.2.5)
+  - MTPower/HUD (0.2.5):
     - lottie-ios
     - MBProgressHUD
-  - MTPower/ImagePicker (0.2.3):
+  - MTPower/ImagePicker (0.2.5):
     - MTPower/Extensions
     - SnapKit
-  - MTPower/Player (0.2.3):
-    - BaiduBCEPlayerFull (~> 2.3.7)
+  - MTPower/Player (0.2.5):
+    - BaiduBCEPlayerFull (~> 3.5.0)
     - MTPower/Basic
     - MTPower/Extensions
     - MTPower/HUD
@@ -44,17 +44,17 @@ PODS:
     - SJMediaCacheServer
     - SJUIKit/SQLite3
     - SnapKit
-  - MTPower/Request (0.2.3):
+  - MTPower/Request (0.2.5):
     - Cache
     - GTMBase64
-    - Moya
+    - Moya (~> 15.0)
     - MTPower/Basic
     - MTPower/HUD
-  - MTPower/Utils (0.2.3):
+  - MTPower/Utils (0.2.5):
     - MJRefresh
     - MTPower/Basic
     - RealmSwift
-  - MTPower/Widgets (0.2.3):
+  - MTPower/Widgets (0.2.5):
     - MTPower/Basic
     - MTPower/Extensions
     - SnapKit
@@ -113,7 +113,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
-  BaiduBCEPlayerFull: 6b2f5b462c391aa952ad19cd8842e70728ee055d
+  BaiduBCEPlayerFull: e8126f66bbd99722acdfbe11f1abc70c8e472499
   Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
@@ -122,7 +122,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  MTPower: 4825885029eb1743db0c8c274d254701c7b7f1cc
+  MTPower: 3fe23a4e3cea6d159d90c89faeec428cc71d9ef1
   Realm: fd821b81e5479be497cc5bca2e020f707d8323eb
   RealmSwift: 8635e4cc524790916d72b0ffa51c1a91f4ec9668
   SJMediaCacheServer: 95bebce42f281fccaff25a5e8284022478ff7ba5
@@ -130,6 +130,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: e03eae6d0a6bb1a6691f783b6bf6601c9633411d
+PODFILE CHECKSUM: aaf91384c6e3a953f0bb67b4e006c5d0d2c10fae
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

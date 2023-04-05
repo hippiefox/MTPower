@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MTPower'
-  s.version          = '0.2.5'
+  s.version          = '0.2.6'
   s.summary          = 'A short description of MTPower.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/hippiefox/MTPower.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.public_header_files = 'MTPower/Classes/**/*.h'
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
 
   s.source_files = 'MTPower/Classes/**/*'
@@ -56,7 +56,7 @@ Pod::Spec.new do |s|
   s.subspec 'Request' do |rr|
       rr.source_files = 'MTPower/Classes/Request/*'
       rr.dependency 'Cache'
-      rr.dependency 'Moya'
+      rr.dependency 'Moya','~> 15.0'
       rr.dependency 'GTMBase64'
       rr.dependency 'MTPower/Basic'
       rr.dependency 'MTPower/HUD'
@@ -86,7 +86,7 @@ Pod::Spec.new do |s|
   s.subspec 'Player' do |pp|
       pp.source_files = 'MTPower/Classes/Player/*'
       pp.dependency 'SnapKit'
-      pp.dependency 'BaiduBCEPlayerFull', "~> 2.3.7"
+      pp.dependency 'BaiduBCEPlayerFull', "~> 3.5.0"
       pp.dependency 'SJUIKit/SQLite3'
       pp.dependency 'SJMediaCacheServer'
       pp.dependency 'MTPower/Widgets'
