@@ -43,6 +43,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'Algorithm' do |al|
       al.source_files = 'MTPower/Classes/Algorithm/*'
+      al.dependency 'GTMBase64'
   end
 
   
@@ -68,7 +69,6 @@ Pod::Spec.new do |s|
       rr.source_files = 'MTPower/Classes/Request/*'
       rr.dependency 'Cache'
       rr.dependency 'Moya','~> 15.0'
-      rr.dependency 'GTMBase64'
       rr.dependency 'MTPower/Basic'
       rr.dependency 'MTPower/HUD'
       rr.dependency 'MTPower/Algorithm'
