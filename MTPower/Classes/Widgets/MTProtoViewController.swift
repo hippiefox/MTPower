@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class MTViewController: UIViewController {
+open class MTProtoViewController: UIViewController {
     open var mt_navigationBar: MTNavigationBar?
 
     open lazy var naviBackButton: MTButton = {

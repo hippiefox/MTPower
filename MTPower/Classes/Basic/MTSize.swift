@@ -11,7 +11,7 @@ public let MT_SCREEN_HEIGHT = UIScreen.main.bounds.height
 public var MT_SCREEN_MIN_SIZE: CGFloat{ min(MT_SCREEN_WIDTH, MT_SCREEN_HEIGHT)}
 
 public func MT_Baseline(_ a: CGFloat)-> CGFloat{
-    a * MT_SCREEN_WIDTH / 375
+    a * (MT_SCREEN_WIDTH / 375)
 }
 
 public let MT_SafeAreaInsets = UIApplication.shared.keyWindow?.safeAreaInsets ?? .zero

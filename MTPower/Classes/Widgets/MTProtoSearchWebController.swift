@@ -8,7 +8,7 @@
 import Foundation
 import WebKit
 
-open class MTSearchWebController: MTWebViewController, WKNavigationDelegate{
+open class MTProtoSearchWebController: MTProtoWebViewController, WKNavigationDelegate{
     public var mgnscheme: String!
     public var ascheme: String!
     public var aschemeappkey: String!

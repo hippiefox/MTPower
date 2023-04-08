@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MTPower'
-  s.version          = '0.2.6'
+  s.version          = '0.2.7'
   s.summary          = 'A short description of MTPower.'
 
 # This description is used to generate tags and improve search results.
@@ -33,8 +33,19 @@ Pod::Spec.new do |s|
   
   s.subspec 'Basic' do |bb|
       bb.source_files = 'MTPower/Classes/Basic/*'
-      bb.dependency 'KeychainAccess', '~> 4.2.1'
   end
+  
+  s.subspec 'Device' do |dv|
+    dv.source_files = 'MTPower/Classes/Device/*'
+    dv.dependency 'MTPower/Basic'
+    dv.dependency 'KeychainAccess', '~> 4.2.1'
+  end
+  
+  s.subspec 'Algorithm' do |al|
+      al.source_files = 'MTPower/Classes/Algorithm/*'
+  end
+
+  
   s.subspec 'Extensions' do |ee|
       ee.source_files = 'MTPower/Classes/Extensions/*'
   end
@@ -60,6 +71,7 @@ Pod::Spec.new do |s|
       rr.dependency 'GTMBase64'
       rr.dependency 'MTPower/Basic'
       rr.dependency 'MTPower/HUD'
+      rr.dependency 'MTPower/Algorithm'
   end
   
   s.subspec 'Widgets' do |ww|
@@ -93,6 +105,7 @@ Pod::Spec.new do |s|
       pp.dependency 'MTPower/Basic'
       pp.dependency 'MTPower/Extensions'
       pp.dependency 'MTPower/HUD'
+      pp.dependency 'MTPower/Algorithm'
       
   end
   # 需要兼容x86结构

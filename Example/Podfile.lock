@@ -13,7 +13,9 @@ PODS:
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - MTPower (0.2.6):
+    - MTPower/Algorithm (= 0.2.6)
     - MTPower/Basic (= 0.2.6)
+    - MTPower/Device (= 0.2.6)
     - MTPower/Download (= 0.2.6)
     - MTPower/Extensions (= 0.2.6)
     - MTPower/HUD (= 0.2.6)
@@ -22,8 +24,11 @@ PODS:
     - MTPower/Request (= 0.2.6)
     - MTPower/Utils (= 0.2.6)
     - MTPower/Widgets (= 0.2.6)
-  - MTPower/Basic (0.2.6):
+  - MTPower/Algorithm (0.2.6)
+  - MTPower/Basic (0.2.6)
+  - MTPower/Device (0.2.6):
     - KeychainAccess (~> 4.2.1)
+    - MTPower/Basic
   - MTPower/Download (0.2.6):
     - RealmSwift
     - SJMediaCacheServer
@@ -37,6 +42,7 @@ PODS:
     - SnapKit
   - MTPower/Player (0.2.6):
     - BaiduBCEPlayerFull (~> 3.5.0)
+    - MTPower/Algorithm
     - MTPower/Basic
     - MTPower/Extensions
     - MTPower/HUD
@@ -48,6 +54,7 @@ PODS:
     - Cache
     - GTMBase64
     - Moya (~> 15.0)
+    - MTPower/Algorithm
     - MTPower/Basic
     - MTPower/HUD
   - MTPower/Utils (0.2.6):
@@ -122,7 +129,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  MTPower: 1b4a3d0b41ab44037a9822ddedb12aed848d336e
+  MTPower: a57336ff280ccd643a8ee81054f9c20b3c61ccc7
   Realm: 5902885dd1d5e71b0b020830caab937ecdf5bf07
   RealmSwift: 0fc037d6c32c7c4fc9362892380f380114ecdcf0
   SJMediaCacheServer: 95bebce42f281fccaff25a5e8284022478ff7ba5

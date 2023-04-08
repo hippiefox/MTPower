@@ -8,7 +8,7 @@
 import Foundation
 import WebKit
  
-public extension MTWebViewController{
+public extension MTProtoWebViewController{
     enum SomeKeyPath: String, CaseIterable{
         case estimatedProgress
         case canGoBack
@@ -17,12 +17,12 @@ public extension MTWebViewController{
 }
 
 
-open class MTWebViewController: MTViewController{
+open class MTProtoWebViewController: MTProtoViewController{
     /// a solid title for web controller, ignore webview content title
     open var solidTitle: String?
-    private var msgs: [String] = []
-    private let urlString: String
-    private var hasShown: Bool = false
+    open var msgs: [String] = []
+    public let urlString: String
+    open var hasShown: Bool = false
     /// toggle pan gesture back
     public var isForbidGestureBack = false
     
@@ -156,14 +156,14 @@ open class MTWebViewController: MTViewController{
 }
 
 //MARK: - WKScriptMessageHandler
-extension MTWebViewController: WKScriptMessageHandler{
+extension MTProtoWebViewController: WKScriptMessageHandler{
     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     }
 }
 
 
 //MARK: - UI
-extension MTWebViewController{
+extension MTProtoWebViewController{
     private func configUI(){
         mt_navigationBar?.title = solidTitle
         view.backgroundColor = .white

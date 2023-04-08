@@ -27,11 +27,6 @@ public class MTPowerConfig{
     /// 底部黑线颜色
     public var nav_shadow_line_color = UIColor.lightGray
     public var nav_height_notX_height: CGFloat = 64
-
-       
+        
     
-    /// service key of `deivice id` in keychain access
-    @MTAssignOnce<String> public static var deviceKeychainKey: String?
-    
-
 }

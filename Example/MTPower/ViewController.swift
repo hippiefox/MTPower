@@ -12,37 +12,27 @@ import MTPower
 
 class ViewController: UIViewController {
     
-    private lazy var button: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .blue
+    private lazy var button: MTSpringButton = {
+        let btn = MTSpringButton()
+        btn.titleNormal = "123"
+        btn.titleSelected = "123456"
+        btn.position = .top
+        btn.contentInset = .init(top: 10, left: 10, bottom: 10, right: 10)
         btn.addTarget(self, action: #selector(tapMore), for: .touchUpInside)
+        btn.backgroundColor = .gray
         return btn
     }()
     
-    @objc private func tapMore(){
-        let url = "https://cilihezi.cn/"
-        let web = MTSearchWebController.init(urlString: url)
-        self.navigationController?.pushViewController(web, animated: true)
-        
+    @objc private func tapMore(_ sender: UIControl){
+        sender.isSelected = !sender.isSelected
     }
-    
-    private lazy var textView: MTPlaceholderTextView = {
-        let view = MTPlaceholderTextView()
-        MT_ViewBoarder(view, 1, .black)
-        view.textLimit = 10
-        view.placeholderText = "placeholder"
-        return view
-    }()
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(textView)
-        textView.snp.makeConstraints {
-            $0.left.equalTo(MT_Baseline(20))
-            $0.right.equalToSuperview().offset(MT_Baseline(-20))
-            $0.top.equalTo(MT_Baseline(100))
-            $0.height.equalTo(200)
+        view.addSubview(button)
+        button.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
 

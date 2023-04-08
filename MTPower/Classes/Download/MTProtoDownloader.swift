@@ -24,7 +24,7 @@ public protocol MTDownloadProvider: NSObject {
 }
 
 public enum MTProtoDownloaderNoti: String {
-    case beigin
+    case begin
     case success
     case failed
 
@@ -166,7 +166,7 @@ open class MTProtoDownloader: NSObject {
             }
         }
 
-        NotificationCenter.default.post(name: .init(MTProtoDownloaderNoti.beigin.rawValue), object: nil)
+        NotificationCenter.default.post(name: .init(MTProtoDownloaderNoti.begin.rawValue), object: nil)
     }
 
     open func __success(task: MTDownloadTask) {

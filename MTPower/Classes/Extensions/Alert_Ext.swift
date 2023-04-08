@@ -12,13 +12,13 @@ public extension UIAlertController {
                         title: String?,
                         msg: String?,
                         cancel: String?,
-                        cancelBlock: (()->Void)?,
+                        cancelBlock: (() -> Void)?,
                         cancelColor: UIColor? = nil,
                         confirm: String?,
-                        confirmBlock: (()->Void)?,
+                        confirmBlock: (() -> Void)?,
                         confirmColor: UIColor? = nil) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        
+
         if let cancel = cancel {
             let action = UIAlertAction(title: cancel, style: .cancel) { _ in
                 cancelBlock?()

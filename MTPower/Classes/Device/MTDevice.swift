@@ -7,6 +7,10 @@
 import Foundation
 import KeychainAccess
 public struct MTDevice {
+    /// service key of `deivice id` in keychain access
+    @MTAssignOnce<String> public static var deviceKeychainKey: String?
+    
+    
     public static let appName: String = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
     public static let bundleId = Bundle.main.bundleIdentifier ?? ""
     public static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
@@ -20,8 +24,8 @@ public struct MTDevice {
     }
 
     public static var uniqueID: String {
-        let service = MTPowerConfig.deviceKeychainKey ?? MTDevice.bundleId
-        let key = MTPowerConfig.deviceKeychainKey ?? MTDevice.bundleId
+        let service = deviceKeychainKey ?? MTDevice.bundleId
+        let key = deviceKeychainKey ?? MTDevice.bundleId
         let kcService = Keychain(service: service)
 
         if let deviceId = try? kcService.get(key){

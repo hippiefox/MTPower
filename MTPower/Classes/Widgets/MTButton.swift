@@ -16,11 +16,6 @@ extension MTButton {
 }
 
 open class MTButton: UIControl {
-    public var maxHeight: CGFloat = 0
-    public var maxWidth: CGFloat = 0
-    public var contentInset: UIEdgeInsets = .zero
-    public var isFlexSize: Bool = false
-    
     public var position: IconPosition = .top {
         didSet {
             setNeedsLayout()
@@ -86,7 +81,7 @@ open class MTButton: UIControl {
         return label
     }()
 
-    override public var isSelected: Bool {
+    override open var isSelected: Bool {
         didSet {
             if isSelected {
                 imageView.image = iconSelected == nil ? iconNormal : iconSelected
@@ -97,56 +92,12 @@ open class MTButton: UIControl {
                 titleLabel.text = titleNormal
                 titleLabel.textColor = titleColorNormal
             }
-            if isFlexSize{
-                invalidateIntrinsicContentSize()
-            }
+           
             setNeedsLayout()
         }
     }
     
-    override public var intrinsicContentSize: CGSize {
-        guard isFlexSize == true else{  return super.intrinsicContentSize}
-        
-        var text = titleNormal ?? ""
-        
-        if isSelected && titleSelected != nil{
-            text = titleSelected!
-        }
-        
-        var titleSize = CGSize.zero
-        if text.isEmpty == false {
-            titleSize = (text as NSString).boundingRect(with: .init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude),
-                                                        options: .usesLineFragmentOrigin,
-                                                        attributes: [.font: titleFont],
-                                                        context: nil).size
-            titleSize = .init(width: ceil(titleSize.width), height: ceil(titleSize.height))
-        }
-
-        let gap = self.gap
-        let iconSize = self.iconSize
-        var contentSize: CGSize = .zero
-
-        switch position {
-        case .top, .bottom:
-            if maxWidth > 0 {
-                contentSize = .init(width: maxWidth, height: iconSize.height + gap + titleSize.height)
-            } else {
-                contentSize = .init(width: max(iconSize.width, titleSize.width), height: iconSize.height + gap + titleSize.height)
-            }
-            contentSize = .init(width: contentSize.width, height: contentSize.height + contentInset.top + contentInset.bottom)
-        case .left, .right:
-            if maxHeight > 0 {
-                contentSize = .init(width: iconSize.width + gap + titleSize.width, height: maxHeight)
-            } else {
-                contentSize = .init(width: iconSize.width + gap + titleSize.width, height: max(iconSize.height, titleSize.height))
-            }
-            contentSize = .init(width: contentSize.width + contentInset.left + contentInset.right, height: contentSize.height)
-        }
-
-        return contentSize
-    }
-
-    override public var isEnabled: Bool {
+    override open var isEnabled: Bool {
         didSet {
             if isEnabled == false {
                 imageView.image = iconDisabled == nil ? iconNormal : iconDisabled
@@ -184,7 +135,7 @@ open class MTButton: UIControl {
 // MARK: Calculate
 
 extension MTButton {
-    private func calculateTextSize(_ rect: CGRect) {
+    public  func calculateTextSize(_ rect: CGRect) {
         var rectWidth: CGFloat = 0
         
         switch position {
@@ -206,11 +157,11 @@ extension MTButton {
         }
     }
 
-    private func calculateImageSize(_ rect: CGRect) {
+    public func calculateImageSize(_ rect: CGRect) {
         imageView.frame.size = iconSize
     }
 
-    private func calculateTextOrigin(_ rect: CGRect) {
+    public  func calculateTextOrigin(_ rect: CGRect) {
         var x: CGFloat = 0, y: CGFloat = 0
         switch position {
         case .top:
@@ -230,7 +181,7 @@ extension MTButton {
         titleLabel.frame.origin = CGPoint(x: x, y: y)
     }
 
-    private func calculateImageOrigin(_ rect: CGRect) {
+    public  func calculateImageOrigin(_ rect: CGRect) {
         var x: CGFloat = 0, y: CGFloat = 0
         switch position {
         case .top:

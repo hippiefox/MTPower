@@ -8,7 +8,7 @@
 import Foundation
 
 
-open class MTNavigationController: UINavigationController{
+open class MTProtoNavigationController: UINavigationController{
     open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count >= 1{
             viewController.hidesBottomBarWhenPushed = true
