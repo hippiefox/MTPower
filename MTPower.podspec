@@ -72,6 +72,7 @@ Pod::Spec.new do |s|
       rr.dependency 'MTPower/Basic'
       rr.dependency 'MTPower/HUD'
       rr.dependency 'MTPower/Algorithm'
+      rr.dependency 'MTPower/Device'
   end
   
   s.subspec 'Widgets' do |ww|
@@ -79,6 +80,7 @@ Pod::Spec.new do |s|
       ww.dependency 'MTPower/Basic'
       ww.dependency 'MTPower/Extensions'
       ww.dependency 'SnapKit'
+      ww.dependency 'MTPower/Device'
       
   end
   
@@ -106,6 +108,7 @@ Pod::Spec.new do |s|
       pp.dependency 'MTPower/Extensions'
       pp.dependency 'MTPower/HUD'
       pp.dependency 'MTPower/Algorithm'
+      pp.dependency 'MTPower/Device'
       
   end
   # 需要兼容x86结构
