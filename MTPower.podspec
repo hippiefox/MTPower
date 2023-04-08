@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MTPower'
-  s.version          = '0.2.7'
+  s.version          = '0.3.0'
   s.summary          = 'A short description of MTPower.'
 
 # This description is used to generate tags and improve search results.
@@ -97,20 +97,6 @@ Pod::Spec.new do |s|
     dd.dependency 'RealmSwift'#, '~> 10.28.6'
   end
   
-  s.subspec 'Player' do |pp|
-      pp.source_files = 'MTPower/Classes/Player/*'
-      pp.dependency 'SnapKit'
-      pp.dependency 'BaiduBCEPlayerFull', "~> 3.5.0"
-      pp.dependency 'SJUIKit/SQLite3'
-      pp.dependency 'SJMediaCacheServer'
-      pp.dependency 'MTPower/Widgets'
-      pp.dependency 'MTPower/Basic'
-      pp.dependency 'MTPower/Extensions'
-      pp.dependency 'MTPower/HUD'
-      pp.dependency 'MTPower/Algorithm'
-      pp.dependency 'MTPower/Device'
-      
-  end
   # 需要兼容x86结构
   s.static_framework = true
   
