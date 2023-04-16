@@ -90,6 +90,7 @@ Pod::Spec.new do |s|
     ip.dependency 'MTPower/Extensions'
     ip.dependency 'MTPower/Basic'
     ip.dependency 'MTPower/Widgets'
+    ip.dependency 'MTPower/HUD'
     
   end
   
