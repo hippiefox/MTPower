@@ -33,6 +33,17 @@ public struct MTImagePickerConfig{
     public static var assetVideoImage: UIImage?
     
     public static var logEnable: Bool = false
+    
+    
+    public static var text_picker_title:String = ""
+    public static var text_picker_cancel:String = ""
+    public static var text_picker_confirm:String = ""
+    /// 请选择
+    public static var text_picker_tips:String = ""
+    public static var text_picker_min:String = ""
+    public static var text_picker_max:String = ""
+    public static var text_picker_selected:String = ""
+
 }
 
 func MTLogImagePicker(_ items: Any..., separator: String = " ", terminator: String = "\n"){
