@@ -89,6 +89,8 @@ Pod::Spec.new do |s|
     ip.dependency 'SnapKit'
     ip.dependency 'MTPower/Extensions'
     ip.dependency 'MTPower/Basic'
+    ip.dependency 'MTPower/Widgets'
+    
   end
   
   s.subspec 'Download' do |dd|
