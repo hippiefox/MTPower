@@ -11,14 +11,14 @@ import UIKit
 
 
 
-open class MTImagePicker: MTProtoViewController {
+open class MTSimpleImagePicker: MTProtoViewController {
     public static func show(from controller: UIViewController,
                      of type: MTImageFetcher.AssetType,
                      limit: Int = 0,
                      min:Int = 0,
                      completion: @escaping MTValueBlock<Set<PHAsset>>) {
         MTImageFetcher.default.fetchAssetType = type
-        let vc = MTImagePicker()
+        let vc = MTSimpleImagePicker()
         vc.maxSelect = limit
         vc.minSelect = min
         vc.completionClosure = completion
@@ -49,7 +49,7 @@ open class MTImagePicker: MTProtoViewController {
 
 // MARK: - actions
 
-extension MTImagePicker {
+extension MTSimpleImagePicker {
     public func handleSelect(_ assets: Set<PHAsset>) {
         mt_navigationBar?.title = MTImagePickerConfig.text_picker_selected + "(\(assets.count))"
         selectedAssets = assets
@@ -86,7 +86,7 @@ extension MTImagePicker {
 
 // MARK: - UI
 
-extension MTImagePicker {
+extension MTSimpleImagePicker {
     public func setupUI() {
         mt_navigationBar?.leftItem = .init(title: MTImagePickerConfig.text_picker_cancel, target: self, selector: #selector(tapCancel))
         mt_navigationBar?.rightItem = .init(title: MTImagePickerConfig.text_picker_confirm, target: self, selector: #selector(tapConfirm))

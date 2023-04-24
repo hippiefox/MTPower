@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MTPower'
-  s.version          = '0.3.2'
+  s.version          = '0.3.3'
   s.summary          = 'A short description of MTPower.'
 
 # This description is used to generate tags and improve search results.
@@ -68,6 +68,7 @@ Pod::Spec.new do |s|
   s.subspec 'Request' do |rr|
       rr.source_files = 'MTPower/Classes/Request/*'
       rr.dependency 'Cache'
+      rr.dependency 'RealReachability'
       rr.dependency 'Moya','~> 15.0'
       rr.dependency 'MTPower/Basic'
       rr.dependency 'MTPower/HUD'
@@ -99,6 +100,10 @@ Pod::Spec.new do |s|
     dd.dependency 'SJUIKit/SQLite3'
     dd.dependency 'SJMediaCacheServer'
     dd.dependency 'RealmSwift'#, '~> 10.28.6'
+  end
+  
+  s.subspec 'Model' do |md|
+    md.source_files = 'MTPower/Classes/Model/*'
   end
   
   # 需要兼容x86结构

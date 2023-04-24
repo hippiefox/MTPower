@@ -11,46 +11,52 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - MTPower (0.3.0):
-    - MTPower/Algorithm (= 0.3.0)
-    - MTPower/Basic (= 0.3.0)
-    - MTPower/Device (= 0.3.0)
-    - MTPower/Download (= 0.3.0)
-    - MTPower/Extensions (= 0.3.0)
-    - MTPower/HUD (= 0.3.0)
-    - MTPower/ImagePicker (= 0.3.0)
-    - MTPower/Request (= 0.3.0)
-    - MTPower/Utils (= 0.3.0)
-    - MTPower/Widgets (= 0.3.0)
-  - MTPower/Algorithm (0.3.0):
+  - MTPower (0.3.3):
+    - MTPower/Algorithm (= 0.3.3)
+    - MTPower/Basic (= 0.3.3)
+    - MTPower/Device (= 0.3.3)
+    - MTPower/Download (= 0.3.3)
+    - MTPower/Extensions (= 0.3.3)
+    - MTPower/HUD (= 0.3.3)
+    - MTPower/ImagePicker (= 0.3.3)
+    - MTPower/Model (= 0.3.3)
+    - MTPower/Request (= 0.3.3)
+    - MTPower/Utils (= 0.3.3)
+    - MTPower/Widgets (= 0.3.3)
+  - MTPower/Algorithm (0.3.3):
     - GTMBase64
-  - MTPower/Basic (0.3.0)
-  - MTPower/Device (0.3.0):
+  - MTPower/Basic (0.3.3)
+  - MTPower/Device (0.3.3):
     - KeychainAccess (~> 4.2.1)
     - MTPower/Basic
-  - MTPower/Download (0.3.0):
+  - MTPower/Download (0.3.3):
     - RealmSwift
     - SJMediaCacheServer
     - SJUIKit/SQLite3
-  - MTPower/Extensions (0.3.0)
-  - MTPower/HUD (0.3.0):
+  - MTPower/Extensions (0.3.3)
+  - MTPower/HUD (0.3.3):
     - lottie-ios
     - MBProgressHUD
-  - MTPower/ImagePicker (0.3.0):
+  - MTPower/ImagePicker (0.3.3):
+    - MTPower/Basic
     - MTPower/Extensions
+    - MTPower/HUD
+    - MTPower/Widgets
     - SnapKit
-  - MTPower/Request (0.3.0):
+  - MTPower/Model (0.3.3)
+  - MTPower/Request (0.3.3):
     - Cache
     - Moya (~> 15.0)
     - MTPower/Algorithm
     - MTPower/Basic
     - MTPower/Device
     - MTPower/HUD
-  - MTPower/Utils (0.3.0):
+    - RealReachability
+  - MTPower/Utils (0.3.3):
     - MJRefresh
     - MTPower/Basic
     - RealmSwift
-  - MTPower/Widgets (0.3.0):
+  - MTPower/Widgets (0.3.3):
     - MTPower/Basic
     - MTPower/Device
     - MTPower/Extensions
@@ -60,6 +66,11 @@ PODS:
   - Realm/Headers (10.38.0)
   - RealmSwift (10.38.0):
     - Realm (= 10.38.0)
+  - RealReachability (1.4.1):
+    - RealReachability/Connection (= 1.4.1)
+    - RealReachability/Ping (= 1.4.1)
+  - RealReachability/Connection (1.4.1)
+  - RealReachability/Ping (1.4.1)
   - SJMediaCacheServer (1.7.8):
     - SJMediaCacheServer/Core (= 1.7.8)
     - SJMediaCacheServer/KTVCocoaHTTPServer (= 1.7.8)
@@ -98,6 +109,7 @@ SPEC REPOS:
     - Moya
     - Realm
     - RealmSwift
+    - RealReachability
     - SJMediaCacheServer
     - SJUIKit
     - SnapKit
@@ -117,9 +129,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  MTPower: 95b5dd0dff4afc55a66676606d03c4dedf678926
+  MTPower: 34d54e14d712274b4405630c1b61079c42177a8a
   Realm: 5902885dd1d5e71b0b020830caab937ecdf5bf07
   RealmSwift: 0fc037d6c32c7c4fc9362892380f380114ecdcf0
+  RealReachability: 828e74e3a1e89ba8f54395344637689cf4065c36
   SJMediaCacheServer: 95bebce42f281fccaff25a5e8284022478ff7ba5
   SJUIKit: a40111941e408cc17d4c1c23495aa92999e814b0
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25

@@ -16,7 +16,7 @@ public func mt_keyWindow() -> UIWindow? {
     return UIApplication.shared.delegate?.window ?? nil
 }
 
-public func sc_visibleViewController() -> UIViewController? {
+public func mt_visibleViewController() -> UIViewController? {
     guard let win = mt_keyWindow(),
           let root = win.rootViewController
     else { return nil }

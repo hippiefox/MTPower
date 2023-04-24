@@ -737,14 +737,12 @@ static NSString * getMD5String(NSString *str) {
 
         if (receipt.lastState == MTDownloadStateSuspened ||
             receipt.lastState == MTDownloadStateURLFailed) {
-            [receipt.stream close];
-            receipt.stream = nil;
-            return;
+            if (localSize < receipt.totalBytesExpectedToWrite){
+                [receipt.stream close];
+                receipt.stream = nil;
+                return;
+            }
         }
-
-//        if (localSize >= receipt.totalBytesExpectedToWrite) {
-//
-//        }
 
         [receipt.stream close];
         receipt.stream = nil;
